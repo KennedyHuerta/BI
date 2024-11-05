@@ -26,9 +26,15 @@ st.markdown(
 )
 
 # Cargar la data de Vacantes
-ruta_archivo = "C:\\Estadística UNMSM\\PROYECTO ETL\\DISCAPACITADOS\\DD_VACANTES.xlsx"
-data = pd.read_excel(ruta_archivo)
+# URL raw del archivo en GitHub
+ruta_archivo = "https://raw.githubusercontent.com/KennedyHuerta/BI/main/DD_VACANTES.xlsx"
 
+# Cargar la data de Vacantes
+try:
+    data = pd.read_excel(ruta_archivo)
+    st.write(data)  # Muestra el contenido del archivo en Streamlit
+except Exception as e:
+    st.error(f"Ocurrió un error al cargar el archivo: {e}")
 # Subtítulo para filtrar vacantes
 st.markdown(f"<h2 style='color: {color_secundario}; font-weight: bold;'>Filtrar Vacantes</h2>", unsafe_allow_html=True)
 
