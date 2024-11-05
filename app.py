@@ -32,7 +32,6 @@ ruta_archivo = "https://raw.githubusercontent.com/KennedyHuerta/BI/main/DD_VACAN
 # Cargar la data de Vacantes
 try:
     data = pd.read_excel(ruta_archivo)
-    st.write(data)  # Muestra el contenido del archivo en Streamlit
 except Exception as e:
     st.error(f"Ocurrió un error al cargar el archivo: {e}")
 # Subtítulo para filtrar vacantes
